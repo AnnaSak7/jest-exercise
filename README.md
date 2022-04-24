@@ -1,4 +1,4 @@
-Learning jest and practice testing.
+Learning jest and practicing testing.
 Setting up for typescript.
 
 ### npx tsc --init
