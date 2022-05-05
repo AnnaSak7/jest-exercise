@@ -35,7 +35,7 @@ describe("Sample Test Cases", function () {
   });
 });
 
-describe("Roman number test", () => {
+describe("Roman number test", function () {
   test("2", () => {
     expect(convertToRoman(2)).toBe("II");
   });

@@ -10,7 +10,9 @@ export function findOutlier(integers: number[]): number {
     : integers[evenOrOdd.findIndex((x) => x === 0)];
 }
 
-export function reverseWords(str: string): string {
+//one ==============================================
+
+export function reverseWords(str: string) {
   // your code here
   const reverse = str
     .split(" ")
@@ -18,6 +20,8 @@ export function reverseWords(str: string): string {
 
   return reverse.join(" ");
 }
+
+//two ===============================================
 
 export function convertToRoman(num: number): string {
   const roman = {
@@ -29,10 +33,16 @@ export function convertToRoman(num: number): string {
     fiveHundred: "D",
     thousand: "M",
   };
+
+  // making the num arguments into string
+  //splitting it into separate numbers
+  //putting them into an array
+  //reverse the order of items in the array
   let arr: any = num.toString().split("").reverse();
   arr: [] = arr.map((a: string) => parseInt(a));
   console.log(arr);
 
+  // function to have the same roman number repeatedly such as III
   const nums = (num: number, rom: string) => {
     let letter = "";
     for (let i = 0; i < num; i++) {
@@ -41,6 +51,7 @@ export function convertToRoman(num: number): string {
     return letter;
   };
 
+  // function taking one digit to decide which number it is from 1 - 9 and takes roman# as argument that gives right roman number accordingly
   const oneFive = (arr: number, one: string, five: string, ten: string) => {
     return arr > 5 && arr < 9
       ? five + nums(arr - 5, one)
@@ -55,6 +66,7 @@ export function convertToRoman(num: number): string {
       : "";
   };
 
+  // putting all roman numbers of all the separated digit to a string variable of z
   let z = "";
   z = arr[3] ? oneFive(arr[3], roman.thousand, "None", "None") : "";
   z = arr[2]
