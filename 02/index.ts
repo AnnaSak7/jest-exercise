@@ -18,3 +18,64 @@ export function reverseWords(str: string): string {
 
   return reverse.join(" ");
 }
+
+export function convertToRoman(num: number): string {
+  const roman = {
+    one: "I",
+    five: "V",
+    ten: "X",
+    fifty: "L",
+    hundred: "C",
+    fiveHundred: "D",
+    thousand: "M",
+  };
+  let arr: any = num.toString().split("").reverse();
+  arr: [] = arr.map((a: string) => parseInt(a));
+  console.log(arr);
+
+  const nums = (num: number, rom: string) => {
+    let letter = "";
+    for (let i = 0; i < num; i++) {
+      letter = letter + rom;
+    }
+    return letter;
+  };
+
+  const oneFive = (arr: number, one: string, five: string, ten: string) => {
+    return arr > 5 && arr < 9
+      ? five + nums(arr - 5, one)
+      : arr < 4 && arr > 0
+      ? nums(arr, one)
+      : arr === 4
+      ? one + five
+      : arr === 9
+      ? one + ten
+      : arr === 5
+      ? five
+      : "";
+  };
+
+  let z = "";
+  z = arr[3] ? oneFive(arr[3], roman.thousand, "None", "None") : "";
+  z = arr[2]
+    ? z + oneFive(arr[2], roman.hundred, roman.fiveHundred, roman.thousand)
+    : z;
+  z = arr[1] ? z + oneFive(arr[1], roman.ten, roman.fifty, roman.hundred) : z;
+  z = arr[0] ? z + oneFive(arr[0], roman.one, roman.five, roman.ten) : z;
+
+  return z;
+}
+
+// function solution(number){
+//   // convert the number to a roman numeral
+// var  roman = {M:1000,CM:900, D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1 }
+
+// var ans = '';
+// while(number>0){
+//     for(a in roman){
+//         if(roman[a]<=number){ ans += a; number-=roman[a]; break;}
+
+//     }
+// }
+// return ans;
+// }
