@@ -1,4 +1,10 @@
-import { findOutlier, reverseWords, convertToRoman, findUniq } from "./index";
+import {
+  findOutlier,
+  reverseWords,
+  convertToRoman,
+  findUniq,
+  multiplicationTable,
+} from "./index";
 
 describe("Simple tests", function () {
   test("one", () => {
@@ -128,5 +134,24 @@ describe("Find a unique number", function () {
   });
   test("[55, 55, 65, 55]", () => {
     expect(findUniq([55, 55, 65, 55])).toBe(65);
+  });
+});
+
+describe("Example Tests", function () {
+  test("1", () => {
+    expect(multiplicationTable(1)).toBe([[1]]);
+  });
+  test("2", () => {
+    expect(multiplicationTable(2)).toBe([
+      [1, 2],
+      [2, 4],
+    ]);
+  });
+  test("3", () => {
+    expect(multiplicationTable(3)).toBe([
+      [1, 2, 3],
+      [2, 4, 6],
+      [3, 6, 9],
+    ]);
   });
 });
