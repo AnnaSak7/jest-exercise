@@ -91,3 +91,10 @@ export function convertToRoman(num: number): string {
 // }
 // return ans;
 // }
+
+// find one unique number in an array of numbers
+
+export function findUniq(arr: Array<number>): number {
+  arr = arr.sort();
+  return arr[0] == arr[1] ? arr[arr.length - 1] : arr[0];
+}
