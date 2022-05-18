@@ -115,3 +115,17 @@ export function multiplicationTable(size: number): any {
   }
   return result;
 }
+
+export function twoSum(numbers: number[], target: number) {
+  // ...
+  let index: number[] = [];
+  for (let i = 0; i < numbers.length - 1; i++) {
+    let left = target - numbers[i];
+    for (let j = 1; j < numbers.length; j++) {
+      if (left === numbers[j]) {
+        return (index = [i, j]);
+      }
+    }
+  }
+  return index;
+}

@@ -4,6 +4,7 @@ import {
   convertToRoman,
   findUniq,
   multiplicationTable,
+  twoSum,
 } from "./index";
 
 describe("Simple tests", function () {
@@ -153,5 +154,17 @@ describe("Example Tests", function () {
       [2, 4, 6],
       [3, 6, 9],
     ]);
+  });
+});
+
+describe("Simple test case", function () {
+  test("", () => {
+    expect(twoSum([1, 2, 3], 4)).toBe([0, 2]);
+  });
+  test("", () => {
+    expect(twoSum([1234, 5678, 9012], 14690)).toBe([1, 2]);
+  });
+  test("", () => {
+    expect(twoSum([2, 2, 3], 4)).toBe([0, 1]);
   });
 });
