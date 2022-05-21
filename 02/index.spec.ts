@@ -140,16 +140,16 @@ describe("Find a unique number", function () {
 
 describe("Example Tests", function () {
   test("1", () => {
-    expect(multiplicationTable(1)).toBe([[1]]);
+    expect(multiplicationTable(1)).toStrictEqual([[1]]);
   });
   test("2", () => {
-    expect(multiplicationTable(2)).toBe([
+    expect(multiplicationTable(2)).toStrictEqual([
       [1, 2],
       [2, 4],
     ]);
   });
   test("3", () => {
-    expect(multiplicationTable(3)).toBe([
+    expect(multiplicationTable(3)).toStrictEqual([
       [1, 2, 3],
       [2, 4, 6],
       [3, 6, 9],
@@ -159,12 +159,12 @@ describe("Example Tests", function () {
 
 describe("Simple test case", function () {
   test("", () => {
-    expect(twoSum([1, 2, 3], 4)).toBe([0, 2]);
+    expect(twoSum([1, 2, 3], 4)).toStrictEqual([0, 2]);
   });
   test("", () => {
-    expect(twoSum([1234, 5678, 9012], 14690)).toBe([1, 2]);
+    expect(twoSum([1234, 5678, 9012], 14690)).toStrictEqual([1, 2]);
   });
   test("", () => {
-    expect(twoSum([2, 2, 3], 4)).toBe([0, 1]);
+    expect(twoSum([2, 2, 3], 4)).toStrictEqual([0, 1]);
   });
 });
