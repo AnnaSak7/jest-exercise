@@ -49,3 +49,25 @@ export function dividedBy(b: number) {
     return a / b;
   };
 }
+
+export function sumPairs(ints: number[], s: number): [number, number] | void {
+  var arr: number[][] = [];
+  for (let i: number = 0; i < ints.length - 1; i++) {
+    for (let j: number = i + 1; j < ints.length; j++) {
+      if (s === ints[i] + ints[j]) {
+        arr.push([i, j]);
+      }
+    }
+  }
+
+  var index: number[] = arr.map((a) => Math.max(...a));
+
+  return arr.length === 1
+    ? [ints[arr[0][0]], ints[arr[0][1]]]
+    : index.length > 1
+    ? [
+        ints[arr[index.indexOf(Math.min(...index))][0]],
+        ints[arr[index.indexOf(Math.min(...index))][1]],
+      ]
+    : undefined;
+}
