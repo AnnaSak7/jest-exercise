@@ -151,3 +151,19 @@ export const towerBuilder = (nFloors: number): string[] => {
 };
 
 // seven ======================================================
+
+export function partsSums(ls: number[]): number[] {
+  let sum: number =
+    ls.length > 0
+      ? ls.reduce((previousValue, currentValue) => previousValue + currentValue)
+      : 0;
+  let result: number[] = [sum];
+  if (ls.length > 0) {
+    for (let i = 0; i < ls.length; i++) {
+      result.push((sum -= ls[i]));
+    }
+  }
+  return result;
+}
+
+// eight =======================================================
