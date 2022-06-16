@@ -94,11 +94,14 @@ export function convertToRoman(num: number): string {
 
 // find one unique number in an array of numbers
 
+// three ===============================================
+
 export function findUniq(arr: Array<number>): number {
   arr = arr.sort();
   return arr[0] == arr[1] ? arr[arr.length - 1] : arr[0];
 }
 
+// four =================================================
 export function multiplicationTable(size: number): any {
   // Implement me! :
 
@@ -116,6 +119,7 @@ export function multiplicationTable(size: number): any {
   return result;
 }
 
+// five =======================================
 export function twoSum(numbers: number[], target: number) {
   // ...
   let index: number[] = [];
@@ -129,3 +133,21 @@ export function twoSum(numbers: number[], target: number) {
   }
   return index;
 }
+
+// six ====================================================
+
+export const towerBuilder = (nFloors: number): string[] => {
+  // build here
+  const nbottomStars: number = nFloors * 2 - 1;
+  let tower: string[] = [];
+
+  for (let i = 0; i < nFloors; i++) {
+    tower.unshift(
+      `${" ".repeat(i)}${"*".repeat(nbottomStars - 2 * i)}${" ".repeat(i)}`
+    );
+  }
+
+  return tower;
+};
+
+// seven ======================================================

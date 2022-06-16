@@ -5,8 +5,10 @@ import {
   findUniq,
   multiplicationTable,
   twoSum,
+  towerBuilder,
 } from "./index";
 
+// ----------------------------------------------
 describe("Simple tests", function () {
   test("one", () => {
     expect(findOutlier([0, 1, 2])).toBe(1);
@@ -24,6 +26,8 @@ describe("Simple tests", function () {
     expect(findOutlier([1, 1, 0, 1, 1])).toBe(0);
   });
 });
+
+//------------------------------------------------------------------
 
 describe("Sample Test Cases", function () {
   test("The quick brown fox jumps over the lazy dog.", () => {
@@ -123,6 +127,8 @@ describe("Sample Test Cases", function () {
 //   });
 // });
 
+//------------------------------------------------------------
+
 describe("Find a unique number", function () {
   test("[1, 1, 1, 1, 2, 1]", () => {
     expect(findUniq([1, 1, 1, 1, 2, 1])).toBe(2);
@@ -137,6 +143,8 @@ describe("Find a unique number", function () {
     expect(findUniq([55, 55, 65, 55])).toBe(65);
   });
 });
+
+//------------------------------------------------------------------
 
 describe("Example Tests", function () {
   test("1", () => {
@@ -157,6 +165,8 @@ describe("Example Tests", function () {
   });
 });
 
+//------------------------------------------------------------------
+
 describe("Simple test case", function () {
   test("", () => {
     expect(twoSum([1, 2, 3], 4)).toStrictEqual([0, 2]);
@@ -166,5 +176,18 @@ describe("Simple test case", function () {
   });
   test("", () => {
     expect(twoSum([2, 2, 3], 4)).toStrictEqual([0, 1]);
+  });
+});
+
+//--------------------------------------------------------------------
+describe("towerbilder test case", function () {
+  test("one", () => {
+    expect(towerBuilder(1)).toStrictEqual(["*"]);
+  });
+  test("two", () => {
+    expect(towerBuilder(2)).toStrictEqual([" * ", "***"]);
+  });
+  test("three", () => {
+    expect(towerBuilder(3)).toStrictEqual(["  *  ", " *** ", "*****"]);
   });
 });
