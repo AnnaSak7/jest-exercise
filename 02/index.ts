@@ -167,3 +167,40 @@ export function partsSums(ls: number[]): number[] {
 }
 
 // eight =======================================================
+
+class Handshakes {
+  handshakes: number;
+  constructor(handshakes: number) {
+    this.handshakes = handshakes;
+  }
+
+  countPpl() {
+    let sum: number = 0;
+    let ppl: number = 0;
+    while (sum < this.handshakes) {
+      sum += ppl;
+      ppl++;
+    }
+    return ppl;
+  }
+}
+
+export function getParticipants(handshakes: number): number {
+  const x = new Handshakes(handshakes);
+  return x.countPpl();
+}
+
+//nine ===========================================================
+
+export function comp(a1: number[] | null, a2: number[] | null): boolean {
+  // your code
+  let a1Sorted: any = a1 != null ? a1.sort((a, b) => a - b) : [null];
+  let a2Sorted: any = a2 != null ? a2.sort((a, b) => a - b) : [null];
+
+  const equals = (a: any, b: any) => JSON.stringify(a) === JSON.stringify(b);
+
+  return equals(
+    a1Sorted,
+    a2Sorted.map((c: any) => Math.sqrt(c))
+  );
+}

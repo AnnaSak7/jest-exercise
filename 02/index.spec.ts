@@ -7,6 +7,8 @@ import {
   twoSum,
   towerBuilder,
   partsSums,
+  getParticipants,
+  comp,
 } from "./index";
 
 // ----------------------------------------------
@@ -214,3 +216,27 @@ describe("partsSums test code", function () {
     ]);
   });
 });
+
+// -------------------------------------------------------------------------------
+
+describe("Handshake problem", () => {
+  test("Testing for fixed tests", () => {
+    expect(getParticipants(0)).toBe(0);
+    expect(getParticipants(1)).toBe(2);
+    expect(getParticipants(3)).toBe(3);
+    expect(getParticipants(6)).toBe(4);
+    expect(getParticipants(7)).toBe(5);
+  });
+});
+
+// -----------------------------------------------------------
+
+// describe("Are they the same?", function(){
+//   let a:number[];
+// let b:number[];
+// a = [121, 144, 19, 161, 19, 144, 19, 11]
+// b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+//   test("Compare the same arrays", ()=> {
+
+//   })
+// })
