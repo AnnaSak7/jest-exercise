@@ -231,12 +231,19 @@ describe("Handshake problem", () => {
 
 // -----------------------------------------------------------
 
-// describe("Are they the same?", function(){
-//   let a:number[];
-// let b:number[];
-// a = [121, 144, 19, 161, 19, 144, 19, 11]
-// b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
-//   test("Compare the same arrays", ()=> {
+describe("Are they the same?", function () {
+  let a: number[];
+  let b: number[];
 
-//   })
-// })
+  test("Compare the same arrays", () => {
+    a = [121, 144, 19, 161, 19, 144, 19, 11];
+    b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+    expect(comp(a, b)).toBe(true);
+  });
+
+  test("Compare not-same arrays", () => {
+    a = [121, 144, 19, 161, 19, 144, 19, 11];
+    b = [122, 14641, 20736, 361, 25921, 361, 20736, 361];
+    expect(comp(a, b)).toBe(false);
+  });
+});
